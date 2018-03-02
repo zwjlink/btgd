@@ -30,7 +30,7 @@ var (
 	// can have for the regression test network.  It is the value 2^255 - 1.
 	regressionPowLimit = new(big.Int).Sub(new(big.Int).Lsh(bigOne, 255), bigOne)
 
-	// testNet3PowLimit is the highest proof of work value a Bitcoin block
+	// testNetPowLimit is the highest proof of work value a Bitcoin block
 	// can have for the test network (version 3).  It is the value
 	// 2^224 - 1.
 	testNetPowLimit = new(big.Int).Sub(new(big.Int).Lsh(bigOne, 224), bigOne)
