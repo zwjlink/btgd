@@ -384,9 +384,7 @@ var RegressionNetParams = Params{
 	HDCoinType: 1,
 }
 
-// TestNetParams defines the network parameters for the test Bitcoin network
-// (version 3).  Not to be confused with the regression test network, this
-// network is sometimes simply called "testnet".
+// TestNetParams defines the network parameters for the test Bitcoin network.
 var TestNetParams = Params{
 	Name:        "testnet",
 	Net:         wire.TestNet,
@@ -402,9 +400,9 @@ var TestNetParams = Params{
 	GenesisHash:              &testNetGenesisHash,
 	PowLimit:                 testNetPowLimit,
 	PowLimitBits:             0x1d00ffff,
-	BIP0034Height:            21111,  // 0000000023b3a96d3484e5abb3755c413e7d41500f8e2a5c3f0dd01299cd8ef8
-	BIP0065Height:            581885, // 00000000007f6655f22f98e72ed80d8b06dc761d5da09df0fa1dc4be4f861eb6
-	BIP0066Height:            330776, // 000000002104c8c45e99a8853285a3b592602a3ccde2b832481da85e9e4ba182
+	BIP0034Height:            -1,
+	BIP0065Height:            -1,
+	BIP0066Height:            -1,
 	CoinbaseMaturity:         100,
 	SubsidyReductionInterval: 210000,
 	TargetTimespan:           time.Hour * 24 * 14, // 14 days
@@ -415,7 +413,9 @@ var TestNetParams = Params{
 	GenerateSupported:        false,
 
 	// Checkpoints ordered from oldest to newest.
-	Checkpoints: nil,
+	Checkpoints: []Checkpoint{
+		{0, newHashFromStr("00000000e0781ebe24b91eedc293adfea2f557b53ec379e78959de3853e6f9f6")},
+	},
 
 	// Consensus rule change deployments.
 	//
