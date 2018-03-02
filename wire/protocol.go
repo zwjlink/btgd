@@ -13,7 +13,7 @@ import (
 // XXX pedro: we will probably need to bump this.
 const (
 	// ProtocolVersion is the latest protocol version this package supports.
-	ProtocolVersion uint32 = 70013
+	ProtocolVersion uint32 = 70016
 
 	// MultipleAddressVersion is the protocol version which added multiple
 	// addresses per message (pver >= MultipleAddressVersion).
@@ -51,6 +51,10 @@ const (
 	// FeeFilterVersion is the protocol version which added a new
 	// feefilter message.
 	FeeFilterVersion uint32 = 70013
+
+	// BTGHardForkVersion is the protocol version where BTG hard fork
+	// happens.
+	BTGHardForkVersion uint32 = 70016
 )
 
 // ServiceFlag identifies services supported by a bitcoin peer.
@@ -147,25 +151,21 @@ type BitcoinNet uint32
 // better idea to simply disconnect clients that are misbehaving over TCP.
 const (
 	// MainNet represents the main bitcoin network.
-	MainNet BitcoinNet = 0xd9b4bef9
+	MainNet BitcoinNet = 0x446d47e1
 
-	// TestNet represents the regression test network.
-	TestNet BitcoinNet = 0xdab5bffa
+	// RegTestNet represents the regression test network.
+	RegTestNet BitcoinNet = 0xdab5bffa
 
-	// TestNet3 represents the test network (version 3).
-	TestNet3 BitcoinNet = 0x0709110b
-
-	// SimNet represents the simulation test network.
-	SimNet BitcoinNet = 0x12141c16
+	// TestNet represents the test network.
+	TestNet BitcoinNet = 0x456e48e2
 )
 
 // bnStrings is a map of bitcoin networks back to their constant names for
 // pretty printing.
 var bnStrings = map[BitcoinNet]string{
-	MainNet:  "MainNet",
-	TestNet:  "TestNet",
-	TestNet3: "TestNet3",
-	SimNet:   "SimNet",
+	MainNet:    "MainNet",
+	RegTestNet: "RegTestNet",
+	TestNet:    "TestNet",
 }
 
 // String returns the BitcoinNet in human-readable form.
