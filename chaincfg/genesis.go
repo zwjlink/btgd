@@ -7,7 +7,7 @@ package chaincfg
 import (
 	"time"
 
-	"github.com/shelvenzhou/btgd/chaincfg/chainhash"
+	"github.com/roasbeef/btcd/chaincfg/chainhash"
 	"github.com/shelvenzhou/btgd/wire"
 )
 

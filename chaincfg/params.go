@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/shelvenzhou/btgd/chaincfg/chainhash"
+	"github.com/roasbeef/btcd/chaincfg/chainhash"
 	"github.com/shelvenzhou/btgd/wire"
 )
 
