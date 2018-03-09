@@ -1,5 +1,5 @@
-hash: d74068b4218716346d9ed6c2bd10439e7c599216dd7b63ef37e9ff0f56632898
-updated: 2017-11-17T15:59:49.625897724-08:00
+hash: 8b8f92686a5cdb19b0c790af29027398f90cfff76484726501aa9bd5d44aa29a
+updated: 2018-03-09T10:38:13.394562+08:00
 imports:
 - name: github.com/aead/siphash
   version: e404fcfc888570cadd1610538e2dbc89f66af814
@@ -45,7 +45,7 @@ imports:
   - svc
   - winapi
 - name: github.com/davecgh/go-spew
-  version: ecdeabc65495df2dec95d7c4a4c3e021903035e5
+  version: 8991bc29aa16c548c550c7ff78260e27b9ab7c73
   subpackages:
   - spew
 - name: github.com/jessevdk/go-flags
@@ -55,7 +55,32 @@ imports:
   subpackages:
   - rotator
 - name: github.com/kkdai/bstream
-  version: f391b8402d23024e7c0f624b31267a89998fca95
+  version: f71540b9dfdcfe64dbf2818e9b66423c6aafcacd
+- name: github.com/roasbeef/btcd
+  version: 9978b939c33973be19b932fa7b936079bb7ba38d
+  subpackages:
+  - addrmgr
+  - blockchain
+  - blockchain/fullblocktests
+  - blockchain/indexers
+  - btcec
+  - btcjson
+  - chaincfg
+  - chaincfg/chainhash
+  - connmgr
+  - database
+  - database/ffldb
+  - database/internal/treap
+  - integration/rpctest
+  - limits
+  - mempool
+  - mining
+  - mining/cpuminer
+  - netsync
+  - peer
+  - rpcclient
+  - txscript
+  - wire
 - name: github.com/roasbeef/btcutil
   version: c3ff179366044979fb9856c2feb79bd4c2184c7a
   subpackages:
@@ -66,7 +91,7 @@ imports:
   - gcs/builder
   - hdkeychain
 - name: golang.org/x/crypto
-  version: 9419663f5a44be8b34ca85f08abc5fe1be11f8a3
+  version: c7dcf104e3a7a1417abc0230cb0d5240d764159d
   subpackages:
   - ripemd160
 testImports: []

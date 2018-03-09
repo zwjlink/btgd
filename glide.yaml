@@ -1,4 +1,4 @@
-package: github.com/roasbeef/btcd
+package: github.com/shelvenzhou/btgd
 import:
 - package: github.com/btcsuite/btclog
 - package: github.com/roasbeef/btcutil
