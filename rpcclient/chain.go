@@ -9,6 +9,7 @@ import (
 	"bytes"
 	"encoding/hex"
 	"encoding/json"
+	"io"
 
 	"github.com/roasbeef/btcd/btcjson"
 	"github.com/roasbeef/btcd/chaincfg/chainhash"
@@ -77,9 +78,41 @@ func (r FutureGetBlockResult) Receive() (*wire.MsgBlock, error) {
 		return nil, err
 	}
 
+	// int32_t nVersion;
+	// uint256 hashPrevBlock;
+	// uint256 hashMerkleRoot;
+	// - uint32_t nHeight;
+	// - uint32_t nReserved[7];
+	// uint32_t nTime;
+	// uint32_t nBits;
+	// - uint256 nNonce;
+	// - std::vector<unsigned char> nSolution;
+	reader := bytes.NewReader(serializedBlock)
+	trimmedBlock := make([]byte, len(serializedBlock))
+	// copy Version, PrevBlock, MerkleRoot
+	reader.Read(trimmedBlock[0 : 4+32+32])
+	// skip nHeight, nReserved
+	reader.Seek(32, io.SeekCurrent)
+	// copy Timestamp, Bits
+	reader.Read(trimmedBlock[4+32+32 : 4+32+32+4+4])
+	// copy low 4 bytes of nNonce
+	reader.Read(trimmedBlock[4+32+32+4+4 : 4+32+32+4+4+4])
+	// skip rest 28 bytes of nNonce
+	reader.Seek(28, io.SeekCurrent)
+
+	// skip nSolution
+	solutionLength, err := wire.ReadVarInt(reader, 0)
+	if err != nil {
+		return nil, err
+	}
+	reader.Seek(int64(solutionLength), io.SeekCurrent)
+
+	// copy Txs
+	reader.Read(trimmedBlock[4+32+32+4+4+4:])
+
 	// Deserialize the block and return it.
 	var msgBlock wire.MsgBlock
-	err = msgBlock.Deserialize(bytes.NewReader(serializedBlock))
+	err = msgBlock.Deserialize(bytes.NewReader(trimmedBlock))
 	if err != nil {
 		return nil, err
 	}
