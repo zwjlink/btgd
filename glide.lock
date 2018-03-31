@@ -1,12 +1,10 @@
-hash: d74068b4218716346d9ed6c2bd10439e7c599216dd7b63ef37e9ff0f56632898
-updated: 2017-11-17T15:59:49.625897724-08:00
+hash: 4a836db42051c1c9937fda70f41002940dec6b7c74b8179494d25d5106fba2f0
+updated: 2018-03-31T16:39:12.583661427-07:00
 imports:
 - name: github.com/aead/siphash
   version: e404fcfc888570cadd1610538e2dbc89f66af814
 - name: github.com/btcsuite/btclog
   version: 84c8d2346e9fc8c7b947e243b9c24e6df9fd206a
-- name: github.com/btcsuite/fastsha256
-  version: 637e656429416087660c84436a2a035d69d54e2e
 - name: github.com/btcsuite/go-flags
   version: 6c288d648c1cc1befcb90cb5511dcacf64ae8e61
 - name: github.com/btcsuite/go-socks
@@ -57,7 +55,7 @@ imports:
 - name: github.com/kkdai/bstream
   version: f391b8402d23024e7c0f624b31267a89998fca95
 - name: github.com/roasbeef/btcutil
-  version: c3ff179366044979fb9856c2feb79bd4c2184c7a
+  version: 071180c7540a3ac6db95d88fc8709bb83c0b47d4
   subpackages:
   - base58
   - bech32
