@@ -1,5 +1,5 @@
-hash: 4a836db42051c1c9937fda70f41002940dec6b7c74b8179494d25d5106fba2f0
-updated: 2018-03-31T16:39:12.583661427-07:00
+hash: f7ce0141998277f0994fb24ec9d763dfb03a1d225cfc5d74b77caa3a86ef05de
+updated: 2018-04-05T18:56:46.062416566-07:00
 imports:
 - name: github.com/aead/siphash
   version: e404fcfc888570cadd1610538e2dbc89f66af814
@@ -55,7 +55,7 @@ imports:
 - name: github.com/kkdai/bstream
   version: f391b8402d23024e7c0f624b31267a89998fca95
 - name: github.com/roasbeef/btcutil
-  version: 071180c7540a3ac6db95d88fc8709bb83c0b47d4
+  version: dfb640c57141f1c2113b92b4b16d2a89c30dd258
   subpackages:
   - base58
   - bech32
