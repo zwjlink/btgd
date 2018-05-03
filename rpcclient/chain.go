@@ -10,6 +10,7 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"io"
+	"strconv"
 
 	"github.com/roasbeef/btcd/btcjson"
 	"github.com/roasbeef/btcd/chaincfg/chainhash"
@@ -150,6 +151,27 @@ type FutureGetBlockVerboseResult chan *response
 // structure from the server with information about the requested block.
 func (r FutureGetBlockVerboseResult) Receive() (*btcjson.GetBlockVerboseResult, error) {
 	res, err := receiveFuture(r)
+	if err != nil {
+		return nil, err
+	}
+
+	// here truncate the 256 bytes nonce to 64 bytes float
+	var tmpMap map[string]interface{}
+	err = json.Unmarshal(res, &tmpMap)
+	if err != nil {
+		return nil, err
+	}
+
+	str := tmpMap["nonce"].(string)
+	rs := []rune(str)
+	str = string(rs[len(rs)-8:])
+	i64, err := strconv.ParseInt(str, 16, 64)
+	if err != nil {
+		return nil, err
+	}
+	tmpMap["nonce"] = float64(i64)
+
+	res, err = json.Marshal(tmpMap)
 	if err != nil {
 		return nil, err
 	}
@@ -422,6 +444,27 @@ type FutureGetBlockHeaderVerboseResult chan *response
 // data structure of the blockheader requested from the server given its hash.
 func (r FutureGetBlockHeaderVerboseResult) Receive() (*btcjson.GetBlockHeaderVerboseResult, error) {
 	res, err := receiveFuture(r)
+	if err != nil {
+		return nil, err
+	}
+
+	// here truncate the 256 bytes nonce to 64 bytes float
+	var tmpMap map[string]interface{}
+	err = json.Unmarshal(res, &tmpMap)
+	if err != nil {
+		return nil, err
+	}
+
+	str := tmpMap["nonce"].(string)
+	rs := []rune(str)
+	str = string(rs[len(rs)-8:])
+	i64, err := strconv.ParseInt(str, 16, 64)
+	if err != nil {
+		return nil, err
+	}
+	tmpMap["nonce"] = float64(i64)
+
+	res, err = json.Marshal(tmpMap)
 	if err != nil {
 		return nil, err
 	}
