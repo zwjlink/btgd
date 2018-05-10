@@ -403,9 +403,29 @@ func (r FutureGetBlockHeaderResult) Receive() (*wire.BlockHeader, error) {
 		return nil, err
 	}
 
+	// int32_t nVersion;
+	// uint256 hashPrevBlock;
+	// uint256 hashMerkleRoot;
+	// - uint32_t nHeight;
+	// - uint32_t nReserved[7];
+	// uint32_t nTime;
+	// uint32_t nBits;
+	// - uint256 nNonce;
+	// - std::vector<unsigned char> nSolution;
+	reader := bytes.NewReader(serializedBH)
+	trimmedBH := make([]byte, len(serializedBH))
+	// copy Version, PrevBlock, MerkleRoot
+	reader.Read(trimmedBH[0 : 4+32+32])
+	// skip nHeight, nReserved
+	reader.Seek(32, io.SeekCurrent)
+	// copy Timestamp, Bits
+	reader.Read(trimmedBH[4+32+32 : 4+32+32+4+4])
+	// copy low 4 bytes of nNonce
+	reader.Read(trimmedBH[4+32+32+4+4 : 4+32+32+4+4+4])
+
 	// Deserialize the blockheader and return it.
 	var bh wire.BlockHeader
-	err = bh.Deserialize(bytes.NewReader(serializedBH))
+	err = bh.Deserialize(bytes.NewReader(trimmedBH))
 	if err != nil {
 		return nil, err
 	}
