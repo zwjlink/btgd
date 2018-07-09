@@ -208,6 +208,8 @@ func (ef *FeeEstimator) ObserveTransaction(t *TxDesc) {
 
 	hash := *t.Tx.Hash()
 	if _, ok := ef.observed[hash]; !ok {
+		size := uint32(GetTxVirtualSize(t.Tx))
+
 		ef.observed[hash] = &observedTransaction{
 			hash: hash,
 			// We'll map the fee per KB back into fee per byte by

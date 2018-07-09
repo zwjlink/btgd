@@ -2,7 +2,7 @@ package: github.com/shelvenzhou/btgd
 import:
 - package: github.com/btcsuite/btclog
 - package: github.com/roasbeef/btcutil
-  version: c3ff179366044979fb9856c2feb79bd4c2184c7a
+  version: dfb640c57141f1c2113b92b4b16d2a89c30dd258
   subpackages:
   - bloom
   - hdkeychain
