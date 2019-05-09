@@ -11,7 +11,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/roasbeef/btcd/btcjson"
+	"github.com/zwjlink/btgd/btcjson"
 )
 
 // TestWalletSvrWsNtfns tests all of the chain server websocket-specific

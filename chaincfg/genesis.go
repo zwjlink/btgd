@@ -5,10 +5,9 @@
 package chaincfg
 
 import (
+	"github.com/zwjlink/btgd/chaincfg/chainhash"
+	"github.com/zwjlink/btgd/wire"
 	"time"
-
-	"github.com/roasbeef/btcd/chaincfg/chainhash"
-	"github.com/shelvenzhou/btgd/wire"
 )
 
 // genesisCoinbaseTx is the coinbase transaction for the genesis blocks for

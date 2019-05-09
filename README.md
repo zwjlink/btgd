@@ -39,7 +39,7 @@ which are both under active development.
 
 #### Windows - MSI Available
 
-https://github.com/roasbeef/btcd/releases
+https://github.com/zwjlink/btgd/releases
 
 #### Linux/BSD/MacOSX/POSIX - Build from Source
 
@@ -62,8 +62,8 @@ recommended that `GOPATH` is set to a directory in your home directory such as
 
 ```bash
 $ go get -u github.com/Masterminds/glide
-$ git clone https://github.com/roasbeef/btcd $GOPATH/src/github.com/roasbeef/btcd
-$ cd $GOPATH/src/github.com/roasbeef/btcd
+$ git clone https://github.com/zwjlink/btgd $GOPATH/src/github.com/zwjlink/btgd
+$ cd $GOPATH/src/github.com/zwjlink/btgd
 $ glide install
 $ go install . ./cmd/...
 ```
@@ -83,7 +83,7 @@ Install a newer MSI
 - Run the following commands to update btcd, all dependencies, and install it:
 
 ```bash
-$ cd $GOPATH/src/github.com/roasbeef/btcd
+$ cd $GOPATH/src/github.com/zwjlink/btgd
 $ git pull && glide install
 $ go install . ./cmd/...
 ```
@@ -112,12 +112,12 @@ $ ./btcd
 
 ## Issue Tracker
 
-The [integrated github issue tracker](https://github.com/roasbeef/btcd/issues)
+The [integrated github issue tracker](https://github.com/zwjlink/btgd/issues)
 is used for this project.
 
 ## Documentation
 
-The documentation is a work-in-progress.  It is located in the [docs](https://github.com/roasbeef/btcd/tree/master/docs) folder.
+The documentation is a work-in-progress.  It is located in the [docs](https://github.com/zwjlink/btgd/tree/master/docs) folder.
 
 ## GPG Verification Key
 

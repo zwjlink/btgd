@@ -5,8 +5,8 @@
 package main
 
 import (
-	"github.com/roasbeef/btcd/chaincfg"
-	"github.com/roasbeef/btcd/wire"
+	"github.com/zwjlink/btgd/chaincfg"
+	"github.com/zwjlink/btgd/wire"
 )
 
 // activeNetParams is a pointer to the parameters specific to the
@@ -44,16 +44,16 @@ var regressionNetParams = params{
 // (wire.TestNet3).  NOTE: The RPC port is intentionally different than the
 // reference implementation - see the mainNetParams comment for details.
 var testNet3Params = params{
-	Params:  &chaincfg.TestNet3Params,
+	Params:  &chaincfg.TestNetParams,
 	rpcPort: "18334",
 }
 
 // simNetParams contains parameters specific to the simulation test network
 // (wire.SimNet).
-var simNetParams = params{
-	Params:  &chaincfg.SimNetParams,
-	rpcPort: "18556",
-}
+//var simNetParams = params{
+//	Params:  &chaincfg.SimNetParams,
+//	rpcPort: "18556",
+//}
 
 // netName returns the name used when referring to a bitcoin network.  At the
 // time of writing, btcd currently places blocks for testnet version 3 in the
@@ -66,7 +66,7 @@ var simNetParams = params{
 // removed and the network parameter's name used instead.
 func netName(chainParams *params) string {
 	switch chainParams.Net {
-	case wire.TestNet3:
+	case wire.TestNet:
 		return "testnet"
 	default:
 		return chainParams.Name

@@ -1,7 +1,7 @@
 package: github.com/shelvenzhou/btgd
 import:
 - package: github.com/btcsuite/btclog
-- package: github.com/roasbeef/btcutil
+- package: github.com/zwjlink/btgutil
   version: dfb640c57141f1c2113b92b4b16d2a89c30dd258
   subpackages:
   - bloom

@@ -13,10 +13,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/roasbeef/btcd/blockchain"
-	"github.com/roasbeef/btcd/chaincfg"
-	"github.com/roasbeef/btcd/chaincfg/chainhash"
-	"github.com/roasbeef/btcd/integration/rpctest"
+	"github.com/zwjlink/btgd/blockchain"
+	"github.com/zwjlink/btgd/chaincfg"
+	"github.com/zwjlink/btgd/chaincfg/chainhash"
+	"github.com/zwjlink/btgd/integration/rpctest"
 )
 
 const (

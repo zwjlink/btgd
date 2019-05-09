@@ -5,7 +5,7 @@ chaincfg
 (https://travis-ci.org/roasbeef/btcd) [![ISC License]
 (http://img.shields.io/badge/license-ISC-blue.svg)](http://copyfree.org)
 [![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)]
-(http://godoc.org/github.com/roasbeef/btcd/chaincfg)
+(http://godoc.org/github.com/zwjlink/btgd/chaincfg)
 
 Package chaincfg defines chain configuration parameters for the three standard
 Bitcoin networks and provides the ability for callers to define their own custom
@@ -26,8 +26,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/roasbeef/btcutil"
-	"github.com/roasbeef/btcd/chaincfg"
+	"github.com/zwjlink/btgutil"
+	"github.com/zwjlink/btgd/chaincfg"
 )
 
 var testnet = flag.Bool("testnet", false, "operate on the testnet Bitcoin network")
@@ -40,14 +40,14 @@ func main() {
 
 	// Modify active network parameters if operating on testnet.
 	if *testnet {
-		chainParams = &chaincfg.TestNet3Params
+		chainParams = &chaincfg.TestNetParams
 	}
 
 	// later...
 
 	// Create and print new payment address, specific to the active network.
 	pubKeyHash := make([]byte, 20)
-	addr, err := btcutil.NewAddressPubKeyHash(pubKeyHash, chainParams)
+	addr, err := btgutil.NewAddressPubKeyHash(pubKeyHash, chainParams)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -58,7 +58,7 @@ func main() {
 ## Installation and Updating
 
 ```bash
-$ go get -u github.com/roasbeef/btcd/chaincfg
+$ go get -u github.com/zwjlink/btgd/chaincfg
 ```
 
 ## GPG Verification Key

@@ -6,13 +6,13 @@ package chaincfg
 
 import (
 	"errors"
+	"github.com/zwjlink/btgd/wire"
 	"math"
 	"math/big"
 	"strings"
 	"time"
 
-	"github.com/roasbeef/btcd/chaincfg/chainhash"
-	"github.com/shelvenzhou/btgd/wire"
+	"github.com/zwjlink/btgd/chaincfg/chainhash"
 )
 
 // These variables are the chain proof-of-work limit parameters for each default

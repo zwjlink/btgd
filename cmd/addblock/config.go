@@ -9,12 +9,12 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/roasbeef/btcd/chaincfg"
-	"github.com/roasbeef/btcd/database"
-	_ "github.com/roasbeef/btcd/database/ffldb"
-	"github.com/roasbeef/btcd/wire"
-	"github.com/roasbeef/btcutil"
 	flags "github.com/jessevdk/go-flags"
+	"github.com/zwjlink/btgd/chaincfg"
+	"github.com/zwjlink/btgd/database"
+	_ "github.com/zwjlink/btgd/database/ffldb"
+	"github.com/zwjlink/btgd/wire"
+	"github.com/zwjlink/btgutil"
 )
 
 const (
@@ -24,7 +24,7 @@ const (
 )
 
 var (
-	btcdHomeDir     = btcutil.AppDataDir("btcd", false)
+	btcdHomeDir     = btgutil.AppDataDir("btcd", false)
 	defaultDataDir  = filepath.Join(btcdHomeDir, "data")
 	knownDbTypes    = database.SupportedDrivers()
 	activeNetParams = &chaincfg.MainNetParams
@@ -111,7 +111,7 @@ func loadConfig() (*config, []string, error) {
 	// while we're at it
 	if cfg.TestNet3 {
 		numNets++
-		activeNetParams = &chaincfg.TestNet3Params
+		activeNetParams = &chaincfg.TestNetParams
 	}
 	if cfg.RegressionTest {
 		numNets++

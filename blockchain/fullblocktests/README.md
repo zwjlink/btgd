@@ -20,7 +20,7 @@ of blocks that excerise the consensus validation rules.
 ## Installation and Updating
 
 ```bash
-$ go get -u github.com/roasbeef/btcd/blockchain/fullblocktests
+$ go get -u github.com/zwjlink/btgd/blockchain/fullblocktests
 ```
 
 ## License

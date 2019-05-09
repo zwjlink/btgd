@@ -13,9 +13,9 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/roasbeef/btcd/btcjson"
-	"github.com/roasbeef/btcutil"
 	flags "github.com/jessevdk/go-flags"
+	"github.com/zwjlink/btgd/btcjson"
+	"github.com/zwjlink/btgutil"
 )
 
 const (
@@ -26,9 +26,9 @@ const (
 )
 
 var (
-	btcdHomeDir           = btcutil.AppDataDir("btcd", false)
-	btcctlHomeDir         = btcutil.AppDataDir("btcctl", false)
-	btcwalletHomeDir      = btcutil.AppDataDir("btcwallet", false)
+	btcdHomeDir           = btgutil.AppDataDir("btcd", false)
+	btcctlHomeDir         = btgutil.AppDataDir("btcctl", false)
+	btcwalletHomeDir      = btgutil.AppDataDir("btcwallet", false)
 	defaultConfigFile     = filepath.Join(btcctlHomeDir, "btcctl.conf")
 	defaultRPCServer      = "localhost"
 	defaultRPCCertFile    = filepath.Join(btcdHomeDir, "rpc.cert")

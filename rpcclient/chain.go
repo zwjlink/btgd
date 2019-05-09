@@ -12,9 +12,9 @@ import (
 	"io"
 	"strconv"
 
-	"github.com/roasbeef/btcd/btcjson"
-	"github.com/roasbeef/btcd/chaincfg/chainhash"
-	"github.com/roasbeef/btcd/wire"
+	"github.com/zwjlink/btgd/btcjson"
+	"github.com/zwjlink/btgd/chaincfg/chainhash"
+	"github.com/zwjlink/btgd/wire"
 )
 
 // FutureGetBestBlockHashResult is a future promise to deliver the result of a

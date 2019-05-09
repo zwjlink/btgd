@@ -4,13 +4,13 @@ wire
 <<<<<<< HEAD
 [![Build Status](http://img.shields.io/travis/roasbeef/btcd.svg)](https://travis-ci.org/roasbeef/btcd)
 [![ISC License](http://img.shields.io/badge/license-ISC-blue.svg)](http://copyfree.org)
-[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/roasbeef/btcd/wire)
+[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/zwjlink/btgd/wire)
 =======
 [![Build Status](http://img.shields.io/travis/roasbeef/btcd.svg)]
 (https://travis-ci.org/roasbeef/btcd) [![ISC License]
 (http://img.shields.io/badge/license-ISC-blue.svg)](http://copyfree.org)
 [![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)]
-(http://godoc.org/github.com/roasbeef/btcd/wire)
+(http://godoc.org/github.com/zwjlink/btgd/wire)
 >>>>>>> c7d17841... multi: update imports to roasbeef's
 
 Package wire implements the bitcoin wire protocol.  A comprehensive suite of
@@ -26,7 +26,7 @@ protocol level.
 ## Installation and Updating
 
 ```bash
-$ go get -u github.com/roasbeef/btcd/wire
+$ go get -u github.com/zwjlink/btgd/wire
 ```
 
 ## Bitcoin Message Overview

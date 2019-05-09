@@ -9,11 +9,11 @@ import (
 	"path/filepath"
 	"runtime"
 
-	"github.com/roasbeef/btcd/blockchain"
-	"github.com/roasbeef/btcd/blockchain/indexers"
-	"github.com/roasbeef/btcd/database"
-	"github.com/roasbeef/btcd/limits"
 	"github.com/btcsuite/btclog"
+	"github.com/zwjlink/btgd/blockchain"
+	"github.com/zwjlink/btgd/blockchain/indexers"
+	"github.com/zwjlink/btgd/database"
+	"github.com/zwjlink/btgd/limits"
 )
 
 const (

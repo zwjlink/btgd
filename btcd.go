@@ -6,6 +6,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/zwjlink/btgd/limits"
 	"net"
 	"net/http"
 	_ "net/http/pprof"
@@ -15,9 +16,8 @@ import (
 	"runtime/debug"
 	"runtime/pprof"
 
-	"github.com/roasbeef/btcd/blockchain/indexers"
-	"github.com/roasbeef/btcd/database"
-	"github.com/roasbeef/btcd/limits"
+	"github.com/zwjlink/btgd/blockchain/indexers"
+	"github.com/zwjlink/btgd/database"
 )
 
 const (

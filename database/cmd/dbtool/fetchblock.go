@@ -9,8 +9,8 @@ import (
 	"errors"
 	"time"
 
-	"github.com/roasbeef/btcd/chaincfg/chainhash"
-	"github.com/roasbeef/btcd/database"
+	"github.com/zwjlink/btgd/chaincfg/chainhash"
+	"github.com/zwjlink/btgd/database"
 )
 
 // fetchBlockCmd defines the configuration options for the fetchblock command.

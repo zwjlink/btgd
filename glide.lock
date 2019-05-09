@@ -54,7 +54,7 @@ imports:
   - rotator
 - name: github.com/kkdai/bstream
   version: f71540b9dfdcfe64dbf2818e9b66423c6aafcacd
-- name: github.com/roasbeef/btcd
+- name: github.com/zwjlink/btgd
   version: 9978b939c33973be19b932fa7b936079bb7ba38d
   subpackages:
   - addrmgr
@@ -79,7 +79,7 @@ imports:
   - rpcclient
   - txscript
   - wire
-- name: github.com/roasbeef/btcutil
+- name: github.com/zwjlink/btgutil
   version: dfb640c57141f1c2113b92b4b16d2a89c30dd258
   subpackages:
   - base58

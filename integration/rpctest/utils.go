@@ -8,8 +8,8 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/roasbeef/btcd/chaincfg/chainhash"
-	"github.com/roasbeef/btcd/rpcclient"
+	"github.com/zwjlink/btgd/chaincfg/chainhash"
+	"github.com/zwjlink/btgd/rpcclient"
 )
 
 // JoinType is an enum representing a particular type of "node join". A node

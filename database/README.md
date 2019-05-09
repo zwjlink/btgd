@@ -5,7 +5,7 @@ database
 (https://travis-ci.org/roasbeef/btcd)  [![ISC License]
 (http://img.shields.io/badge/license-ISC-blue.svg)](http://copyfree.org)
 [![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)]
-(http://godoc.org/github.com/roasbeef/btcd/database)
+(http://godoc.org/github.com/zwjlink/btgd/database)
 
 Package database provides a block and metadata storage database.
 
@@ -17,7 +17,7 @@ and that entity will be btcd.
 When a client wants programmatic access to the data provided by btcd, they'll
 likely want to use the [btcrpcclient](https://github.com/roasbeef/btcrpcclient)
 package which makes use of the [JSON-RPC API]
-(https://github.com/roasbeef/btcd/tree/master/docs/json_rpc_api.md).
+(https://github.com/zwjlink/btgd/tree/master/docs/json_rpc_api.md).
 
 However, this package could be extremely useful for any applications requiring
 Bitcoin block storage capabilities.
@@ -40,18 +40,18 @@ storage, and strict checksums in key areas to ensure data integrity.
 ## Installation and Updating
 
 ```bash
-$ go get -u github.com/roasbeef/btcd/database
+$ go get -u github.com/zwjlink/btgd/database
 ```
 
 ## Examples
 
 * [Basic Usage Example]
-  (http://godoc.org/github.com/roasbeef/btcd/database#example-package--BasicUsage)  
+  (http://godoc.org/github.com/zwjlink/btgd/database#example-package--BasicUsage)  
   Demonstrates creating a new database and using a managed read-write
   transaction to store and retrieve metadata.
 
 * [Block Storage and Retrieval Example]
-  (http://godoc.org/github.com/roasbeef/btcd/database#example-package--BlockStorageAndRetrieval)  
+  (http://godoc.org/github.com/zwjlink/btgd/database#example-package--BlockStorageAndRetrieval)  
   Demonstrates creating a new database, using a managed read-write transaction
   to store a block, and then using a managed read-only transaction to fetch the
   block.
